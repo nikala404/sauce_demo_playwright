@@ -29,7 +29,7 @@ public class LoginPageSteps extends LoginPage {
 
     @Step("Validate error for locked out user")
     public LoginPageSteps validateLockedOutUser() {
-        getLoginError().isVisible();
+        Assert.assertTrue(getLoginError().isVisible());
         Assert.assertEquals(getLoginError().textContent(), "Epic sadface: Sorry, this user has been locked out.");
         return this;
     }
